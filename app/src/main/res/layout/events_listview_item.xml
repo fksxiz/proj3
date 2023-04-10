@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+    android:id="@+id/ImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:src="@tools:sample/avatars"
+    android:layout_margin="5dp"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTextView"
+        app:layout_constraintStart_toEndOf="@id/ImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Event title"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="2021-12-15"
+        android:layout_margin="5dp"
+
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ArticleTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@tools:sample/lorem/random"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toEndOf="@id/ImageView"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
