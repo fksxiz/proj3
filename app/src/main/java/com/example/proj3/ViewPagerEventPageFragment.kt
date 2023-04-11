@@ -1,5 +1,6 @@
 package com.example.proj3
 
+import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.core.text.HtmlCompat
 import com.bumptech.glide.Glide
 
@@ -21,6 +23,7 @@ class ViewPagerEventPageFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_view_pager_event_page, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -30,7 +33,7 @@ class ViewPagerEventPageFragment : Fragment() {
             findViewById<TextView>(R.id.DateTextView).text = event.createDate
             findViewById<TextView>(R.id.AnnotationTextView).text = event.annotation
 
-            val htmlText = event.message?.replace("\$nbsp;", " ")
+            val htmlText = event.message.replace("\$nbsp;", " ")
             findViewById<TextView>(R.id.MessageTextView).text =
                 Html.fromHtml(htmlText, HtmlCompat.FROM_HTML_MODE_LEGACY).toString()
                     .replace("  ", " ")

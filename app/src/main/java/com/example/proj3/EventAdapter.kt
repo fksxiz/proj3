@@ -29,8 +29,8 @@ class EventAdapter(private val context: Context):BaseAdapter() {
 
         view.apply {
             findViewById<TextView>(R.id.titleTextView).text = event.title
-            findViewById<TextView>(R.id.AnnotationTextView).text = event.annotation
-            findViewById<TextView>(R.id.DateTextView).text = event.createDate
+            findViewById<TextView>(R.id.ArticleTextView).text = event.annotation
+            findViewById<TextView>(R.id.dateTextView).text = event.createDate
             if(!event.imageUrl.isNullOrEmpty()) Glide.with(context).load(event.imageUrl).into(findViewById(R.id.ImageView))
         }
         return view
